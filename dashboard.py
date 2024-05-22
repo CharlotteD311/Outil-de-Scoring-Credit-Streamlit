@@ -95,8 +95,8 @@ if show_credit_decision_button:
             shap_df = pd.DataFrame(list(shap_values_dict.items()), columns=['Caractéristique', 'Valeur'])
 
             # Visualisation des valeurs SHAP
-            fig_shap = px.bar(shap_df, x='Valeur SHAP', y='Caractéristique', orientation='h',
-                              color='Valeur SHAP', color_continuous_scale=px.colors.diverging.RdBu)
+            fig_shap = px.bar(shap_df, x='Valeur', y='Caractéristique', orientation='h',
+                              color='Valeur', color_continuous_scale=px.colors.diverging.RdBu)
             fig_shap.update_layout(title="Impact des caractéristiques sur la prédiction", yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_shap)
 
