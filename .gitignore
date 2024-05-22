@@ -1,0 +1,20 @@
+# Ignorer les environnements virtuels
+../.venv/
+env/
+
+# Ignorer les fichiers de données
+*.joblib
+test_data.csv
+
+# Ignorer les fichiers binaires et les dossiers temporaires
+__pycache__/
+*.pyc
+
+# Ignorer les fichiers spécifiques qui ne doivent pas être partagés
+config.yaml
+
+# Fichiers système spécifiques à l'OS
+.DS_Store
+Thumbs.db
+
+.idea/
