@@ -12,7 +12,7 @@ st.title("Demande de financement")
 
 # Charger les données de test pour obtenir les identifiants des clients
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-data_path = os.path.join(BASE_DIR, '..', 'Data', 'test_selected_data.csv')
+data_path = os.path.join(BASE_DIR, 'Data', 'test_selected_data.csv')
 df_test = pd.read_csv(data_path, index_col=0)
 client_ids = df_test.index.tolist()
 
