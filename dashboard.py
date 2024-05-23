@@ -49,15 +49,15 @@ if show_credit_decision_button:
 
         # Jauge de probabilité avec étiquettes de risque
         fig = go.Figure(go.Indicator(
-            mode="gauge",
+            mode="gauge+number",
             value=prob,
             title={'text': "Probabilité de défault"},
             gauge={
-                'axis': {'range': [0, 100], 'tickvals': [20, 52, 75], 'ticktext': ['Risque faible', 'Risque modéré', 'Risque élevé']},
+                'axis': {'range': [0, 100], 'tickvals': [30, 52, 75], 'ticktext': ['Risque faible', 'Risque modéré', 'Risque élevé']},
                 'bar': {'color': "rgba(0, 0, 0, 0)"},
                 'steps': [
-                    {'range': [0, 40], 'color': "green"},
-                    {'range': [40, 52], 'color': "orange"},
+                    {'range': [0, 30], 'color': "green"},
+                    {'range': [30, 52], 'color': "orange"},
                     {'range': [52, 100], 'color': "red"}
                 ],
                 'threshold': {
