@@ -37,7 +37,7 @@ else:
 # Affichage de la décision de crédit
 if show_credit_decision_button:
     client_data = df_test.loc[selected_client_id].to_dict()
-    client_data["client_id"] = int(selected_client_id)  # Inclure l'ID du client dans les données
+    client_data["client_id"] = int(selected_client_id)
 
     # Envoyer la requête à l'API
     response = requests.post(f"{API_URL}/predict", json=client_data)
@@ -53,12 +53,12 @@ if show_credit_decision_button:
             value=prob,
             title={'text': "Probabilité de défault"},
             gauge={
-                'axis': {'range': [0, 100], 'tickvals': [20, 50, 75], 'ticktext': ['Risque faible', 'Risque modéré', 'Risque élevé']},
+                'axis': {'range': [0, 100], 'tickvals': [20, 52, 75], 'ticktext': ['Risque faible', 'Risque modéré', 'Risque élevé']},
                 'bar': {'color': "rgba(0, 0, 0, 0)"},
                 'steps': [
                     {'range': [0, 40], 'color': "green"},
-                    {'range': [40, 60], 'color': "orange"},
-                    {'range': [60, 100], 'color': "red"}
+                    {'range': [40, 52], 'color': "orange"},
+                    {'range': [52, 100], 'color': "red"}
                 ],
                 'threshold': {
                     'line': {'color': "black", 'width': 4},
