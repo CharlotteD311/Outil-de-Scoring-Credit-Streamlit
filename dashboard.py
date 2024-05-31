@@ -78,7 +78,12 @@ if selected_client_id in df_original.index:
             st.write(f"**Crédits actifs:** {round(total_active_credits)}")
         else:
             st.write("**Crédits actifs:** non disponible")
-        st.write(f"**Jours moyens de paiement en retard:** {round(client_info_original['AVG_DAYS_PAST_DUE'])}")
+
+        avg_days_past_due = client_info_original['AVG_DAYS_PAST_DUE']
+        if pd.notna(avg_days_past_due):
+            st.write(f"**Jours moyens de paiement en retard:** {round(avg_days_past_due)}")
+        else:
+            st.write("**Jours moyens de paiement en retard:** Information non disponible")
         st.write(f"**Taux d'endettement (en %):** {client_info_original['TX_ENDETTEMENT']:.2f}")
 
 else:
