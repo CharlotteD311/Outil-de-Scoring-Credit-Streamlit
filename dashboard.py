@@ -19,9 +19,6 @@ df_original = pd.read_csv(original_data_path, index_col='SK_ID_CURR')
 df_test = pd.read_csv(data_path, index_col=0)
 client_ids = df_test.index.tolist()
 
-# Charger l'explainer SHAP
-explainer_path = os.path.join(BASE_DIR, "Models", "explainer.pkl")
-explainer = joblib.load(explainer_path)
 
 # CSS pour respect des normes WCAG
 st.markdown("""
