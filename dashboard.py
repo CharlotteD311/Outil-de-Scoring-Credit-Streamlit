@@ -73,7 +73,11 @@ if selected_client_id in df_original.index:
         st.subheader("Informations financières")
         st.write(f"**Revenu total annuel:** {client_info_original['AMT_INCOME_TOTAL']}")
         st.write(f"**Dette totale:** {client_info_original['TOTAL_DEBT']}")
-        st.write(f"**Crédits actifs:** {round(client_info_original['TOTAL_ACTIVE_CREDITS'])}")
+        total_active_credits = client_info_original['TOTAL_ACTIVE_CREDITS']
+        if pd.notna(total_active_credits):
+            st.write(f"**Crédits actifs:** {round(total_active_credits)}")
+        else:
+            st.write("**Crédits actifs:** non disponible")
         st.write(f"**Jours moyens de paiement en retard:** {round(client_info_original['AVG_DAYS_PAST_DUE'])}")
         st.write(f"**Taux d'endettement (en %):** {client_info_original['TX_ENDETTEMENT']:.2f}")
 
